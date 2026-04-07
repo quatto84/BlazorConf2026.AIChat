@@ -1,0 +1,35 @@
+﻿<div class="container">
+    <div class="chat-area">
+        @if (Suggestions != null)
+        {
+            <div class="chat-suggestion">
+                <CascadingValue Value="this">
+                    @Suggestions
+                </CascadingValue>
+            </div>
+        }
+        <div class="field-border-disabled chat-messages">
+            @if (!_historyChat.Any())
+            {
+                <p>Pronto!</p>
+            }
+            @foreach (var message in _historyChat)
+            {
+                <p class="@GetMessageCssClass(message)">[@message.Role] @message</p>
+            }
+        </div>
+    </div>
+    
+    <div class="input-area">
+        <div class="field-row-stacked">
+            <label for="text20">Parla con la AI</label>
+            <textarea id="text20" rows="8" @bind="@_text" placeholder="Chiedi all'assistente..."></textarea>
+        </div>
+        <div class="field-row-stacked button">
+            <label>.</label>
+            <button id="submitText20" class="default" @onclick="HandleSendAsync" disabled="@_loading">OK</button>
+            <button id="submitText21" class="default" @onclick="HandleClear" disabled="@_loading">Pulisci</button>
+        </div>
+    </div>
+</div>
+

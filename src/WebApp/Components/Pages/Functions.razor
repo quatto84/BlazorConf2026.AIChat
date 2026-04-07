@@ -1,0 +1,11 @@
+﻿@page "/functions"
+
+<PageHeader>Functions</PageHeader>
+
+<AIChat ChatClientKey="@nameof(CallingFunctions)">
+    <Suggestions>
+        <AIChatSuggestion DisplayName="Ora corrente" Prompt="Che ore sono?" />
+        <AIChatSuggestion DisplayName="Meteo Venezia" Prompt="che tempo fa a venezia?" />
+        <AIChatSuggestion DisplayName="Eccezione" Prompt="Genera una eccezione" />
+    </Suggestions>
+</AIChat>

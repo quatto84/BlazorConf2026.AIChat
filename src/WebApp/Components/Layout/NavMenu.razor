@@ -1,0 +1,5 @@
+﻿@inject NavigationManager NavigationManager
+
+<button class="default" @onclick="@(() => NavigationManager.NavigateTo("./"))">Home</button>
+<button class="default" @onclick="@(() => NavigationManager.NavigateTo("./functions"))">Functions</button>
+<button class="default" @onclick="@(() => NavigationManager.NavigateTo("./tools"))">Tools</button>

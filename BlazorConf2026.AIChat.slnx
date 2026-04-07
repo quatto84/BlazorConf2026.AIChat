@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="aspire.config.json" />
+    <File Path="presentazione.pdf" />
+    <File Path="README.MD" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/AppHost/AppHost.csproj" Id="662323e0-526d-49e1-b5a5-c266d64ba5f2" />
+    <Project Path="src/ServiceDefaults/ServiceDefaults.csproj" />
+    <Project Path="src/WebApp/WebApp.csproj" />
+  </Folder>
+</Solution>

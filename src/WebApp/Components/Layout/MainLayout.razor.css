@@ -1,0 +1,50 @@
+#blazor-error-ui {
+    color-scheme: light only;
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+.main {
+    height: 100vh;
+    margin: 0;
+}
+
+    .main > .window {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .main > .window > .window-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+.menu {
+    margin-bottom: 1rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+}
+
+.me-1 {
+    margin-right: 8px;
+}

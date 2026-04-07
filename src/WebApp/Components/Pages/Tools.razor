@@ -1,0 +1,43 @@
+﻿@page "/tools"
+@using System.ComponentModel
+
+@inject IJSRuntime JS
+
+<PageHeader>Tools</PageHeader>
+
+<div class="h-100 overflow-auto" style="display: flex; flex-direction: column;">
+    <AIChat Tool="@_btnAITool">
+    
+    </AIChat>
+    <div style="padding: 0.5rem">
+        <Button @ref="_button" Text="Cliccami" OnClick="@(() => JS.InvokeVoidAsync("alert", "Cliccato!"))" />
+    </div>
+</div>
+
+@code {
+    private Button? _button;
+    private BtnAITool? _btnAITool = new BtnAITool();
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (_button is not null && _btnAITool is not null)
+            {
+                _btnAITool._button = _button;
+            }
+        }
+    }
+
+    class BtnAITool
+    {
+        public Button? _button;
+
+        [AIChat]
+        [Description("Clicca sul pulsante collegato")]
+        public void ClickButton()
+        {
+            _button?.OnClick.InvokeAsync(null);
+        }
+    }
+}
